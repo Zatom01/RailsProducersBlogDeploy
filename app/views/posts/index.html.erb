@@ -1,0 +1,15 @@
+<h1>Total posts: <%= @posts.count %></h1>
+
+<% if @posts %>
+
+    <% @posts.each do |post| %>
+        <ul>
+        <li><%= link_to post.content, user_post_path(@user, post) %></li>
+        </ul>
+    <% end  %>
+
+<% end  %>
+
+<h4><%= link_to "Create Post", new_user_post_path(current_user),:class => 'btn btn-primary' %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</h4>
